@@ -6,6 +6,10 @@
 #include "sdkconfig.h"
 #include <stdio.h>
 
+extern "C" { // This switch allows the ROS C-implementation to find this main
+void app_main(void);
+}
+
 void app_main() {
     vTaskDelay(pdMS_TO_TICKS(2000));
     printf("Hello world!\n");
